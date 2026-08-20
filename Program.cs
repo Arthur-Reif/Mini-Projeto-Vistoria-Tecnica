@@ -26,3 +26,50 @@
 ///RF09 - Varredura de Listas com Laços Tradicionais
 ///RF10 - Exibição no Terminal(Console Application)
 ///RF11 - Menu Principal e Navegação(Consle.ReadLine)
+
+
+Console.WriteLine("Olá bem vindo a nossa vistoria tecnica");
+
+bool continuar = true;
+
+while (continuar)
+{
+    Console.WriteLine("1 - para realizar uma nova vistoria");
+    Console.WriteLine("2 - para exibir todas as vistorias realizadas");
+    Console.WriteLine("3 - para sair");
+
+    int escolha = ObtemUmNumero("Escolha: ");
+
+    if (escolha == 1)
+    {
+        //NovaVistoria()
+    }
+    else if (escolha == 2)
+    {
+        //ExibirVistorias()
+    }
+    else if (escolha == 3)
+    {
+        continuar = false;
+    }
+    else
+    {
+        Console.WriteLine("Numero invalido digite novamente");
+    }
+
+
+}
+
+
+static int ObtemUmNumero(string mensagem)
+{
+    Console.WriteLine(mensagem);
+
+    bool ehNumero = int.TryParse(Console.ReadLine(), out int num);
+    while (!ehNumero)
+    {
+        Console.WriteLine("Numero invalido digite novamente");
+        ehNumero = int.TryParse(Console.ReadLine(), out num);
+    }
+    return num;
+}
