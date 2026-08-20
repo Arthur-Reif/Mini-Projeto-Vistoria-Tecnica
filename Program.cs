@@ -116,3 +116,17 @@ void RealizarNovaVistoria()
         veiculo = new Caminhao(marca, modelo, ano, quilometragem, quantidadeEixos, CapacidadeCargaToneladas);
     }
 }
+
+///Criar a parte do checklist
+ 
+
+///Criar a parte de pontuação
+
+ 
+///Criar a parte de exibição
+ 
+
+///Criar parte de recomendação de serviços
+ 
+
+///Revisar e criar condições a prova de seres humanos com baixo QI ou velhinhos.
