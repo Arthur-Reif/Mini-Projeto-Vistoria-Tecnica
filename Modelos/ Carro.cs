@@ -7,9 +7,9 @@ namespace Mini_Projeto_Vistoria_Tecnica.Modelos;
             this.QuantidadePortas = quantidadePortas;
         }
 
-        public override List<string> ObterCheckistObrigatorio()
+        public override List<string> ObterChecklistObrigatorio()
         {
-            List<string> checklist = base.ObterCheckistObrigatorio();
+            List<string> checklist = base.ObterChecklistObrigatorio();
             checklist.Add("Estepe e Macaco");
             checklist.Add("Triângulo de Sinalização");
             checklist.Add("Ar Condicionado Funcional");

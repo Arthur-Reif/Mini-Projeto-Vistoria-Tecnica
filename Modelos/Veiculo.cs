@@ -21,7 +21,7 @@ public abstract class Veiculo
         ItemVistoria item = new ItemVistoria(nome, status);
         this.VistoriaRealizada.Add(item);
     }
-    public virtual List<string> ObterCheckistObrigatorio()
+    public virtual List<string> ObterChecklistObrigatorio()
     {
         return new List<string>
         {

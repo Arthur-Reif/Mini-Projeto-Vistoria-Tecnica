@@ -7,9 +7,9 @@ public class Moto : Veiculo
     {
         this.Cilindrada = cilindrada;
     }
-    public override List<string> ObterCheckistObrigatorio()
+    public override List<string> ObterChecklistObrigatorio()
     {
-        List<string> checklist = base.ObterCheckistObrigatorio();
+        List<string> checklist = base.ObterChecklistObrigatorio();
         checklist.Add("Kit Transmissão/Corrente");
         checklist.Add("Manetes de Freio/Embreagem");
         checklist.Add("Pezinho Lateral");

@@ -10,9 +10,9 @@ public class Caminhao : Veiculo
         this.CapacidadeCargaToneladas = capacidadeCargaToneladas;
     }
 
-    public override List<string> ObterCheckistObrigatorio()
+    public override List<string> ObterChecklistObrigatorio()
     {
-        List<string> checklist = base.ObterCheckistObrigatorio();
+        List<string> checklist = base.ObterChecklistObrigatorio();
         checklist.Add("Tacógrafo");
         checklist.Add("Sistema de Freios a Ar");
         checklist.Add("Trava e Lona da Caçamba");

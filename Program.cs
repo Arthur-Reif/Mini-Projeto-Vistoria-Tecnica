@@ -1,5 +1,8 @@
 ﻿using Mini_Projeto_Vistoria_Tecnica.Modelos;
+using Mini_Projeto_Vistoria_Tecnica.Services;
 
+List<Veiculo> vistorias = new List<Veiculo>();
+MotorVistoria motorVistoria = new MotorVistoria();
 ///Veiculo veiculo = new Veiculo("Fiat", "Uno", 2015, 75000);
 
 ///Console.WriteLine($"Marca: {veiculo.Marca}");
@@ -18,8 +21,8 @@
 ///RF01 - Modelo do Item de vistoria(ItemVistoria) - teoricamente feito
 ///RF02 - Classe Base Veiculo - Classe pai criada com atributos e métodos comuns a todos os tipos de veículos.
 ///RF03 - Herança e Checklists Especificos - Feito de acordo com o que pede no arquivo de requisitos.
-///RF04 - Tabela de Pontuação por Item - (Já tem o checklist, mas precisa percorrer a lista de itens vistoriados e calcular a pontuação de acordo.)
-///RF05 - Cálculo do Percentual de Aprovação - (Cuidar com o calculo da porcentagem)
+///RF04 - Tabela de Pontuação por Item - (Já tem o checklist, feita a função para somar a pontuação, mas ainda não criei a exibição, to tendo que pegar ajuda de IA em alguns momentos, se travar muito tempo em uma parte recomendo o mesmo.)
+///RF05 - Cálculo do Percentual de Aprovação - (Cuidar com o calculo da porcentagem.)
 ///RF06 - Classificação do Estado do Veiculo - ()
 ///RF07 - Relatório de Pendencias e Apontamentos - (Ruim reprovado - regular bom mas precisa arrumar e bom aprovado sem apontamentos)
 ///RF08 - Recomendação de Serviços da Oficina - (O que tiver ruim ou regular precisa de recomendação de serviço.)
@@ -115,8 +118,20 @@ void RealizarNovaVistoria()
         double CapacidadeCargaToneladas = double.Parse(Console.ReadLine());
         veiculo = new Caminhao(marca, modelo, ano, quilometragem, quantidadeEixos, CapacidadeCargaToneladas);
     }
-}
+    Console.WriteLine("Para cada item, informe: Bom, Regular ou Ruim.");
+    List<string> checklist = veiculo.ObterChecklistObrigatorio();
 
+    foreach (string itemChecklist in checklist)
+    {
+        Console.WriteLine($"- {itemChecklist}: ");
+        string status = Console.ReadLine();
+        veiculo.AdicionarItemVistoriado(itemChecklist, status);
+    }
+
+    vistorias.Add(veiculo);
+
+    Console.WriteLine("Vistoria registrada com sucesso!");
+}
 ///Criar a parte do checklist
  
 
